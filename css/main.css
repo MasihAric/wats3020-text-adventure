@@ -11,7 +11,7 @@ button#undo {
 }
 button#undo:hover {
     border: none;
-    background: #333;
+    background: rgb(107, 105, 105);
     color: #fff;
 }
 #choices {
@@ -35,16 +35,17 @@ button#undo:hover {
 
 h1, h2 {
     font-family: Georgia, "Times New Roman", serif;
+    text-align: center;
 }
 body {
     width: 80%;
     margin: 1rem auto;
     padding: 3rem 2rem;
-    background: #fafafa;
-    color: #666;
+    background: #4b4949;
+    color: rgb(245, 129, 129);
     font-family: Helvetica, Arial, sans-serif;
     border: 4px double #666;
 }
 html {
-    background: #e8e8e8 url('../images/vertical-waves.png') repeat;
+    background: hsl(0, 12%, 67%) url('../images/vertical-waves.png') repeat;
 }
