@@ -3,42 +3,33 @@ let playerName = "";
 let choiceList = [];
 let currentPage = null;
 
-///////////////////////////////////////////////////
-//////// TODOs ///////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-// Fill in the blanks below to complete each TODO task.                       //
-////////////////////////////////////////////////////////////////////////////////
+playerName = window.prompt("What is your Name?", "Aric");
 
-// TODO: Prompt the user for their name. Store the name in the variable `playerName`.
+function getCurrentPage(slug){
+    currentPage = storyData[slug];
+    return currentPage;
+}
+function recordChoice(slug){
+    choiceList.push(slug);
+    console.log('Added to choice array ${slug}');
 
+}
+function undoChoice(){
+    choiceList.pop();
+    if(choiceList.length === 0)
+    {
+        choiceList.push('p1');
+    }
+    console.log('Returning previous page ${choiceList[choiceList.length - 1]}');
+    return choiceList[choiceList.length -1];
 
+}
+function changePage(slug) {
+    recordChoice(slug);
+    currentPaage = getCurrentPage(slug);
+    updatePage(currentPage);
 
-// TODO: Create a function called `getCurrentPage()`. It should accept one
-// parameter, which is the `slug` for the current page. This function will fetch
-// the current page and return a page object using the `slug` value for a key.
-
-
-
-// TODO: Create a function called `recordChoice()` that will accept a `slug`
-// parameter and add it to the `choiceList` Array (probably using `push()`).
-
-
-
-// TODO: Create a function called `undoChoice()` that will remove the last
-// `slug` in the `choiceList` Array and then will return the last `slug` in the
-// `choiceList` Array.
-
-
-
-// TODO: Create a function called `changePage()` that accepts a parameter called
-// `slug` and which handles "turning the page" in three steps:
-//  1. It should call the `recordChoice()` function (and give it the `slug` as
-//     a parameter.
-//  2. It should set the `currentPage` value by calling the `getCurrentPage()`
-//     function (and give it the `slug` as a parameter).
-//  3. It should invoke the `updatePage()` function (and give it the
-//     `currentPage` object as a parameter).
-
+}
 
 
 ///////////////////////////////////////////////////
